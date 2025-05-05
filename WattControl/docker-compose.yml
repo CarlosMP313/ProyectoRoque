@@ -40,10 +40,7 @@ services:
       - db_data:/var/lib/mysql
     networks:
       - internal_network  # Solo accesible internamente
-    logging:
-      driver: loki
-      options:
-        loki-url: "http://loki:3100/loki/api/v1/push"
+
 
   nginx:
     image: nginx:latest
@@ -59,10 +56,7 @@ services:
       - web
     networks:
       - external_network  # Accesible externamente
-    logging:
-      driver: loki
-      options:
-        loki-url: "http://loki:3100/loki/api/v1/push"
+
 
   backup:
     image: mysql:8.0
@@ -78,10 +72,7 @@ services:
       - db
     networks:
       - internal_network
-    logging:
-      driver: loki
-      options:
-        loki-url: "http://loki:3100/loki/api/v1/push"
+
 
   volume_backup:
     image: alpine:latest
@@ -98,42 +89,53 @@ services:
       - db
     networks:
       - internal_network
-    logging:
-      driver: loki
-      options:
-        loki-url: "http://loki:3100/loki/api/v1/push"
+
 
   loki:
-    image: grafana/loki:latest
-    container_name: loki
+    image: grafana/loki:2.8.0
+    container_name: wattcontrol_loki
     ports:
       - "3100:3100"
     command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - loki_data:/loki
+    restart: unless-stopped
     networks:
       - internal_network
 
   promtail:
-    image: grafana/promtail:latest
-    container_name: promtail
+    image: grafana/promtail:2.8.0
+    container_name: wattcontrol_promtail
     volumes:
-      - ./promtail-config.yaml:/etc/promtail/config.yaml
+      - ./promtail-config.yaml:/etc/promtail/config.yaml:ro
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     command: -config.file=/etc/promtail/config.yaml
     depends_on:
       - loki
+    restart: unless-stopped
     networks:
       - internal_network
 
   grafana:
     image: grafana/grafana:latest
-    container_name: grafana
+    container_name: wattcontrol_grafana
     ports:
       - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./datasources:/etc/grafana/provisioning/datasources:ro
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-admin}
+      - GF_USERS_ALLOW_SIGN_UP=false
     depends_on:
       - loki
+    restart: unless-stopped
     networks:
       - internal_network
+
+
   falco:
     image: falcosecurity/falco:latest
     privileged: true
@@ -156,6 +158,8 @@ services:
 
 volumes:
   db_data:
+  loki_data:
+  grafana_data:
 
 networks:
   internal_network:
