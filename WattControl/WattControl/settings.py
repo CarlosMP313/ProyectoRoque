@@ -75,6 +75,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'WattControl.wsgi.application'
 
+# filepath: /home/david/Documents/8vo/Seguridad-en-la-nube/Proyecto-docker/ProyBueno/ProyectoRoque/WattControl/WattControl/settings.py
+INSTALLED_APPS += [
+    'corsheaders',
+]
+
+MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
+
+# Configuración de CORS
+CORS_ALLOWED_ORIGINS = [
+    "https://tudominio.com",
+    "https://otrodominio.com",
+]
+CORS_ALLOW_CREDENTIALS = True
+
 CSRF_TRUSTED_ORIGINS = [
     'https://localhost',
     'https://127.0.0.1',
