@@ -1,0 +1,53 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title%}Soporte{%endblock %}
+{% block body %}
+<div class="contenedorSoporte">
+  <div class="contSporte">
+    <div class="search-soporteAcomodo">
+        <h2>Soporte Técnico de WattControl</h2>
+      <form action="" method="GET" class="search-form">
+        {% csrf_token %}
+        <div class="search-container">
+          <input type="text" id="querySoport" class="querySoport" name="querySoport" placeholder="Utilizar buscardor..." required/>
+          <button type="submit" class="buttonSoport"><img class="searchSoprt" src="{% static 'imgs/search.png' %}" alt="Enviar"></button>
+        </div>
+      </form>
+    </div>
+    <nav class="productosDMy">
+                <ul class="listaProductos">
+                    {% for producto in productos %}
+                    <li class="itemProducto">
+                        <img class="imagen-anchura-completa" src="{% static 'imgs/' %}{{ producto.nomImagen }}" alt="{{ producto.nombre }}" />
+                        <h2>{{ producto.nombre }}</h2>
+                    </li>
+                    {% endfor %}
+                   
+                </ul>
+            </nav>
+    <div class="FAQsSoporte">
+        <div class="imgSoporte">
+            <img src='{% static "imgs/help-sharp.png" %}' />
+        </div>
+        <div class="textSoprteFq">
+          <h2>Buscar en FAQs</h2>
+          <br>
+          <p>Para algunos de los problemas más comunes hemos reunido 
+            información sobre los posibles problemas, causas y soluciones 
+            a éstos. Si no encuentra lo que busca, póngase en contacto con
+            nosotros  </p><a class="masSoporte" href="{% url 'contacto' %}">----Mas----</a>
+        </div>
+    </div>
+    <div class="imgsoportefont">
+        <img
+        class="imagen-anchura-completaSoporte"
+        src="{% static 'imgs/Image_soli_tec.png' %}"
+      />
+            <form action="{% url 'contacto' %}" method="get">
+                <button class="contact-buttonSoport">Acceder</button>
+              </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

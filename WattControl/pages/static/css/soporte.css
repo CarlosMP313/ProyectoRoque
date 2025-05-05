@@ -1,0 +1,232 @@
+.contenedorSoporte {
+    text-align: center;
+}
+
+.contSporte {
+    width: 100%;
+    margin: auto;
+}
+
+.search-container {
+    display: inline-block;
+    position: relative; /* Asegura que el contenedor sea el punto de referencia para el botón de búsqueda */
+}
+
+.search-soporte {
+   
+    position: relative;
+  }
+  
+  #querySoport {
+    width: 250px; /* Ancho del input ajustado */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    vertical-align: middle; /* Alineación vertical en el centro */
+  }
+    
+  .searchSoprt {
+    position: absolute; /* Establece el botón de enviar en posición absoluta */
+    right: 20px; /* Ajusta el margen derecho */
+    top: 50%; /* Alinea verticalmente el botón de enviar */
+    transform: translateY(-70%); /* Centra verticalmente el botón */
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .productosSporte {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .boxPS {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-color: #EDEDED;
+    border-radius: 3%;
+    text-align: center; /* Centra horizontalmente el contenido */
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */  
+}
+  
+  .boxPS img {
+    max-width: 70%;
+    max-height: 70%;
+    margin: auto;
+  }
+  
+  .boxPS h2 {
+    margin-top: 10px; /* Espacio entre la imagen y el texto */
+  }
+  
+  .buttonSoport {
+    display: inline-block;
+    padding: 0;
+    background: none;
+    border: none;
+    vertical-align: middle;
+    /* Agrega otros estilos necesarios */
+  }
+  .boxPS h2 {
+    margin-top: 10%; /* Espacio entre la imagen y el texto */
+  }
+
+ .productosSporte{
+    width: 100%;
+   
+ } 
+ .FAQsSoporte{
+    width: 100%;
+    margin-top: 20px;
+    
+ }
+ .imgSoporte {
+    display: inline-block;
+    vertical-align: top; /* Alinea los elementos en la parte superior */
+    /* Ajusta el ancho, el margen, el relleno y otros estilos según sea necesario */
+width: 30%;
+margin: auto;
+}
+
+.textSoprteFq {
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+    margin: auto;
+    margin-top: 1%;
+}
+.textSoprteFq h2{
+    font-size: xx-large;
+}
+.textSoprteFq p{
+    font-size: x-large;
+}
+.masSoporte {
+    text-decoration: none; 
+    font-size: 18px; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.masSoporte:hover {
+    transform: scale(1.3); 
+    font-size: 30px; 
+}
+
+.imgsoportefont{
+
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.imagen-anchura-completaSoporte {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.imgsoportefont h2 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Cambia el color del texto según tu diseño */
+}
+
+.imgsoportefont p{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Cambia el color del texto según tu diseño */
+}
+.imgsoportefont form {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+}
+
+.imgsoportefont h2 {
+    font-size: xxx-large; /* Ajusta el tamaño del título según tu diseño */
+}
+
+.imgsoportefont p {
+    font-size: x-large;/* Ajusta el tamaño del texto según tu diseño */
+    max-width: 80%; /* Limita el ancho del párrafo para evitar que sea demasiado ancho */
+}
+
+
+.contact-buttonSoport{
+    background-color: #fce1a9;
+    color: #ffffff;
+    border: none;
+    padding: 20px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px; 
+    transition: all 0.3s ease; /* Agrega una transición suave a todos los cambios */
+}
+.contact-buttonSoport:hover{
+    background-color: #fbcc6d;
+    font-size: 24px;
+   
+transform: scale(1.2); 
+
+}
+
+
+.productosDMy {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .listaProductos {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  
+  .itemProducto {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-color: #EDEDED;
+    border-radius: 3%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .itemProducto img {
+    max-width: 70%;
+    max-height: 70%;
+    margin: auto;
+  }
+  
+  .itemProducto h2 {
+    margin-top: 10px;
+  }

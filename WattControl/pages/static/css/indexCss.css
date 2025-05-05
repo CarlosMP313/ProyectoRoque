@@ -1,0 +1,31 @@
+
+
+.ini1I {
+    background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRFP-xAvW539FaFGiVmrrnqwnMnbxYJNMtDRCu4ep0DayRBscT0');
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir completamente el contenedor */
+    background-position: center; /* Centra la imagen de fondo */
+
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+ 
+ 
+}
+
+
+.sloganIni{
+    background-color: #FCE2AA; /* Establece el color del texto en blanco para que sea legible */
+    font-size: 24px; /* Tamaño de fuente */
+}
+
+.sloganIni h1 {
+    color: rgb(255, 255, 255); /* Establece el color del texto en blanco para que sea legible */
+    text-align:left;
+    font-size: 40px; /* Tamaño de fuente */
+    padding: 10px;
+}
+.sloganIni img {
+    padding: 20px ;
+    display: block; /* Para que los márgenes automáticos funcionen */
+    margin: 0 auto; /* Establece márgenes automáticos horizontalmente */
+}

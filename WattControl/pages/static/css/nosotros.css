@@ -1,0 +1,107 @@
+.contInternalNosotros {
+    width: 100%;
+    margin: auto;
+    background-color: #EFE9E9;
+}
+
+.nosotrosManagement {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 3%;
+}
+
+.nosotrosManagement img {
+    width: 100%;
+    height: 500px;
+    display: block;
+}
+
+.groupedMision {
+    margin-bottom: 5%;
+}
+
+.groupedMision h2 {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+}
+
+.groupedMision p {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 32px;
+}
+
+.groupedVision {
+    margin-bottom: 5%;
+}
+
+.groupedVision h2 {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+}
+
+.groupedVision p {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 32px;
+}
+
+.internalValores {
+    padding-bottom: 40px;
+}
+
+.iconManagement {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    background-color: #66A8C5;
+    border-radius: 30px;
+}
+
+.firstPairValores {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 5%;
+}
+
+.secondPairValores {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 5%;
+}
+
+.thirdPairValores {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.valorContainer {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra los elementos verticalmente */
+    margin-right: 10%; /* Agrega margen entre los pares de imágenes y texto */
+    margin-left: 10%;
+}
+
+.valorContainer p {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+}
+
+.innovacionValor {
+    margin-top: 16%;
+}
+
+
+
+
+
+
+

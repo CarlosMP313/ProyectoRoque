@@ -1,0 +1,167 @@
+
+/*    verificar  
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .producto-box {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-color: #EDEDED;
+    border-radius: 3%;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+  }
+  
+  .producto-imagen {
+    max-width: 70%;
+    max-height: 70%;
+    margin: auto;
+  }
+  
+  .producto-box h2 {
+    margin-top: 10px;
+  }
+  
+  */
+  .garantias-container {
+    text-align: center;
+  }
+  
+  .contenedor-garantias {
+    width: 100%;
+    margin: auto;
+    justify-content: center; /* Centra los elementos horizontalmente */
+  }
+  
+  .labelmisgarantias {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    padding-left: 6%;
+    padding-top: 4%;
+  }
+  .labelmisgarantias h2{
+    color: #5f5f5f;
+    padding: 10px;
+  }
+  
+  .buttongarantias {
+    background: none;
+    border: none;
+    padding: 0; 
+  }
+  
+   .GarantiasDMy {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .listaGarantias {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  
+  .itemGarantias {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-color: #EDEDED;
+    border-radius: 3%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .itemGarantias img {
+    max-width: 70%;
+    max-height: 70%;
+    margin: auto;
+  }
+  
+  .itemGarantias h2 {
+    margin-top: 10px;
+  }
+
+  .estadoGarantias {
+    background-color: #FCE2AA;
+    color: #ffffff;
+    border-radius: 5px;
+    width:300px;
+    height: 40px;
+    text-align: center;
+    margin: 0;
+    line-height: 40px; /* Centra verticalmente el texto */
+  }
+  .estsdoGarantias{
+    display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  flex-direction: column; /* Alinea los elementos en una columna */
+
+  }
+  .divInfoGrantias{
+    display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  flex-direction: column; /* Alinea los elementos en una columna */
+margin-top: 4%;  
+margin-bottom: 4%;  
+}
+
+  .infogarantias {
+    background-color: #FCE2AA;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 5px;
+    width:300px;
+    height: 40px;
+    text-align: center;
+    margin: 0;
+    line-height: 40px; /* Centra verticalmente el texto */
+    transition: all 0.3s ease;  
+}
+  .infogarantias:hover{
+
+    background-color:#f5c04f;
+      font-size: 24px;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1); 
+  }
+  
+  .estadoImagengarantias {
+    position: absolute;
+    top: 5px; 
+    right: 5px; 
+    width: 40px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+}
+
+.detallesGarantias {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}

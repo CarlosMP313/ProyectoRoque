@@ -1,0 +1,39 @@
+{% extends "baselogin.html" %} 
+{% load static %} 
+{% block title%}Garantias{%endblock%} 
+{% block body %}
+
+<div class="garantias-container">
+    <div class="contenedor-garantias">
+        <div class="labelmisgarantias">
+          <h2>Mis garantias</h2>
+        </div>
+        <nav class="GarantiasDMy">
+          <ul class="listaGarantias">
+              {% for producto in productos %}
+              <div class="estsdoGarantias">
+                  <li class="itemGarantias">
+                      <img class="imagen-anchura-completa" src="{% static 'imgs/' %}{{ producto.nomImagen }}" alt="{{ producto.nombre }}" />
+                      {% for relacion in producto.relacionup_set.all %}
+                      <h2>{{ producto.nombre }}</h2> 
+                      <img class="estadoImagengarantias" src="{% if relacion.garantia == 'Activa' %}{% static 'imgs/truecircle.png' %}{% else %}{% static 'imgs/flasecircle.png' %}{% endif %}" alt="Estado">
+                      <div class="detallesGarantias">
+                        <p>Nombre: {{ producto.nombre }}</p>
+                        <p>IMEI: {{ relacion.imei }}</p>
+                        <p>Número de serie: {{ relacion.numero_serie }}</p>
+                        <p>Modelo: {{ relacion.modelo }}</p>
+                      </div>
+                    </li>
+                    <p class="estadoGarantias">{{ relacion.garantia }}</p>
+                    {% endfor %}
+              </div>
+              {% endfor %}
+          </ul>
+      </nav>
+          <div class="divInfoGrantias">
+          <a class="infogarantias" href="">+ informacion</a>
+          </div>
+    </div>
+</div>
+
+{% endblock %}

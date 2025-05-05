@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Detalles Consumo{% endblock%}
+
+{% block body %}
+<div class="secondBody">
+    <div class="containerConsumo">
+        <h1>Consumo Energético</h1>
+        <canvas id="energyChart" class="chart-small"></canvas>
+        <img src="https://smilics.com/wp-content/uploads/2023/04/box.png" alt="Box" class="chart-image">
+        <div id="additionalInfo">
+            <p id="cost">Costo: $0.00 MXN</p>
+            <p id="emissions">Emisiones de CO2: 0 kg</p>
+        </div>
+        <canvas id="powerChart" class="chart-large"></canvas>
+    </div>
+    </div>
+
+{% endblock%}

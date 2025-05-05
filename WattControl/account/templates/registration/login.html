@@ -1,0 +1,45 @@
+{% extends "baselogin.html" %}
+{% load static %}
+{% block title %}Login{% endblock%}
+{% block body %}
+<div class="body-contener">
+  <div class="container_sing">
+
+    <h2 class="title">Inicio de Sesión</h2>
+    <p class="subtitle">¡Construyamos algo genial!</p>
+
+    <form class="form" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="username" class="form-label">Ingresa tu Usuario</label>
+        {{ form.username }}
+
+      <div class="form-group">
+        <label for="password" class="form-label">Contraseña</label>
+        {{ form.password }}
+        <div class="password-toggleLogon" onclick="togglePasswordVisibilityInicio()">
+          <!-- <img src="{% static 'imgs/eye-off.png' %}" alt="Toggle Password Visibility"> -->
+        </div>
+      </div>
+      <input type="hidden" name="next" method="{{ next }}"/>
+      <button type="submit" class="btn-submit" value="Log-in">Ingresar</button>
+      <div class="forgot-password-container"> 
+        <a href="{% url 'password_reset' %}" class="forgot-password">¿Olvidaste tu contraseña?</a>
+      </div>
+    </form>
+    <div class="iniconFAoGO">
+      <div class="social-login" onclick="handleSocialLogin('facebook')">
+        <img src="{% static '/imgs/faceIconIni.png' %}"/>
+        <div class="text-wrapper">Inicia con Facebook</div>
+      </div>
+      <div class="social-login" onclick="handleSocialLogin('google')">
+        <img src="{% static '/imgs/gogleIcon.png' %}" />
+        <div class="text-wrapper">Inicia con Google</div>
+      </div>
+    </div>
+    <div class="signup-text-container">
+      <p class="signup-text">¿No tienes una cuenta? <a href="{% url 'SingIn' %}" class="signup-link">Regístrate</a></p>
+    </div>
+  </div>
+</div>
+{% endblock %}

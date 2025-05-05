@@ -1,0 +1,331 @@
+
+
+  .productos-container {
+    text-align: center;
+  }
+  
+  .contenedor-productos {
+    width: 100%;
+    margin: auto;
+    justify-content: center; /* Centra los elementos horizontalmente */
+  }
+  
+  .labelmisproductos {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    padding-left: 6%;
+    padding-top: 4%;
+  }
+  .labelmisproductos h2{
+    color: #5f5f5f;
+    padding: 10px;
+  }
+  
+  .buttonproductos {
+    background: none;
+    border: none;
+    padding: 0; 
+  }
+  
+  .agregarproduct {
+    width: 35px;
+    height: auto;
+    padding: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+  }
+ 
+  .agregarproduct:hover {
+    transform: scale(1.1); 
+  }
+  
+
+  .productosDMy {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .listaProductos {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  
+  .itemProducto {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-color: #EDEDED;
+    border-radius: 3%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .itemProducto img {
+    max-width: 70%;
+    max-height: 70%;
+    margin: auto;
+  }
+  
+  .itemProducto h2 {
+    margin-top: 10px;
+  }
+
+  .estadoProducto {
+    background-color: #FCE2AA;
+    color: #ffffff;
+    border-radius: 5px;
+    width:300px;
+    height: 40px;
+    text-align: center;
+    margin: 0;
+    line-height: 40px; /* Centra verticalmente el texto */
+  }
+  .estsdoproductodiv{
+    display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  flex-direction: column; /* Alinea los elementos en una columna */
+
+  }
+  .estadoImagen {
+    position: absolute;
+    top: 5px; 
+    right: 5px; 
+    width: 40px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+}
+  /* Probar */
+/* Estilos para el modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+ 
+}
+
+.modal-contenido {
+  background-color: #FCE2AA;
+  margin: 5% auto 15% auto; /* Ajusta el margen para colocar el contenido más arriba */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ancho inicial del modal */
+  max-width: 650px; /* Máximo ancho del modal */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  animation: expandir 0.3s ease-out; /* Animación de expansión */
+  top: 0%; /* Lo colocamos inicialmente en el centro vertical */
+}
+
+/* Animación de expansión del modal */
+@keyframes expandir {
+  from { width: 0; }
+  to { width: 80%; }
+}
+
+/* Estilos para el botón de cierre */
+.cerrar {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-contenido .h2porduct{
+color:#ffffff;
+}
+    /* Probar */
+
+    .search-containerproductos {
+      display: inline-block;
+      position: relative; /* Asegura que el contenedor sea el punto de referencia para el botón de búsqueda */
+  }
+  
+
+    .querySoportproductos {
+      width: 350px; /* Ancho del input ajustado */
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      vertical-align: middle; /* Alineación vertical en el centro */
+    }
+      
+    .searchSoprtproductos {
+      position: absolute; /* Establece el botón de enviar en posición absoluta */
+      right: 30px; /* Ajusta el margen derecho */
+      top: 50%; /* Alinea verticalmente el botón de enviar */
+      transform: translateY(-70%); /* Centra verticalmente el botón */
+      width: 25px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .contact-buttonProduct {
+      background-color: #bebebe;
+      color: #ffffff;
+      border: none;
+      padding: 20px 40px;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 50px; 
+      margin-top: 2%;
+      transition: all 0.3s ease; /* Agrega una transición suave a todos los cambios */
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Ajusta la sombra para más volumen */
+    }
+  .contact-buttonProduct:hover{
+      background-color: rgb(133, 133, 133);
+      font-size: 24px;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1); 
+  
+  }
+  .detallesProducto {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  .productosDMyBusque {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .listaProductosBusque {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  
+  .itemProductoBusque {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-color: #EDEDED;
+    border-radius: 3%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .itemProductoBusque img {
+    max-width: 70%;
+    max-height: 70%;
+    margin: auto;
+  }
+
+.model-dos{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+}
+
+#formularioAgregarProducto {
+  max-width: 400px;
+  margin: 5% auto 15% auto; /* Ajusta el margen para colocar el formulario más arriba */
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Ancho inicial del modal */
+  max-width: 650px;
+  top: 0%;
+}
+
+#formularioAgregarProducto h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-groupP {
+    margin-bottom: 15px;
+}
+
+.form-groupP label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-groupP input[type="text"],
+.form-groupP input[type="date"] {
+  width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.agregarproductoUser  {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.agregarproductoUser:hover {
+    background-color: #45a049;
+}
+
+.cerrar2 {
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cerrar2:hover,
+.cerrar2:focus {
+  color: rgb(54, 46, 46);
+  text-decoration: none;
+  cursor: pointer;
+}
+

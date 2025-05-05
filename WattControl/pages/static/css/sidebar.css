@@ -1,0 +1,102 @@
+.sidebar {
+    height: 100vh;
+    width: 300px;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #FCE2AA;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+.nomI{
+   
+    display: block; /* Hacer que la imagen sea un bloque */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.inic{
+    margin-top: 10%;
+    list-style-type: none;
+    font-size: 30px;
+    text-align: center;
+}
+.ref{
+    margin-top: 2%;
+    list-style-type: none;
+    padding: 0;
+    font-family: "Inter Medium", sans-serif;
+    font-size: 30px;
+}
+
+.ref  {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+  }
+
+.sidebar li#login-link a::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 4px;
+    background-color: #ffffff; /* Color de la línea */
+    list-style-type: none;
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+  
+
+.sidebar li {
+    padding: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+.closeIcon{
+    cursor: pointer;
+    position: absolute; /* Establece la posición absoluta para el ícono de cierre */
+    top: 10px; /* Lo posiciona 10px desde la parte superior del sidebar */
+    right: 10px; /* Lo posiciona 10px desde el lado derecho del sidebar */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+}
+
+.redessiderbar {
+    /* Estilos del div de redes */
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: 0; /* Colocar en la parte inferior */
+    left: 0; /* Alinear a la izquierda */
+    width: 100%; /* Ocupar todo el ancho del sidebar */
+    text-align: center; /* Centrar elementos internos horizontalmente */
+}
+  
+.redessiderbar h2 {
+    /* Estilos del título "Síguenos" */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    color: #fff;
+    font-size: x-large;
+}
+.redessiderbar {
+    /* Estilos del div de redes */
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: 0; /* Colocar en la parte inferior */
+    left: 0; /* Alinear a la izquierda */
+    width: 100%; /* Ocupar todo el ancho del sidebar */
+    text-align: center; /* Centrar elementos internos horizontalmente */
+    margin-bottom: 25%;
+}
+  
+.redessiderbar h2 {
+    /* Estilos del título "Síguenos" */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.redessiderbar a {
+    margin: 0 10px; /* Espacio a la derecha e izquierda de cada enlace */
+}
+

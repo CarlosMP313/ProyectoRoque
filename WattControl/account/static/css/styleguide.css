@@ -1,0 +1,60 @@
+  :root {
+    --all-colorswhite-colorwhite: rgba(255, 255, 255, 1);
+    --all-colorstext-primary-colortext-primary: rgba(40, 40, 40, 1);
+    --black-40: rgba(49, 57, 77, 1);
+    --text-colortext-primary: rgba(40, 40, 40, 1);
+    --all-colorstext-color: rgba(148, 156, 169, 1);
+    --all-colorsprimary-colorprimary-color: rgba(0, 158, 247, 1);
+    --all-colorsstroke-color: rgba(232, 233, 234, 1);
+    --all-colorsprimary-colorprimary-color80: rgba(47, 147, 246, 1);
+    --poppins-medium24-font-family: "Poppins", Helvetica;
+    --poppins-medium24-font-weight: 500;
+    --poppins-medium24-font-size: 24px;
+    --poppins-medium24-letter-spacing: 0px;
+    --poppins-medium24-line-height: 36px;
+    --poppins-medium24-font-style: normal;
+    --poppins-regular14-font-family: "Poppins", Helvetica;
+    --poppins-regular14-font-weight: 400;
+    --poppins-regular14-font-size: 14px;
+    --poppins-regular14-letter-spacing: 0px;
+    --poppins-regular14-line-height: 22px;
+    --poppins-regular14-font-style: normal;
+    --poppins-medium14-font-family: "Poppins", Helvetica;
+    --poppins-medium14-font-weight: 500;
+    --poppins-medium14-font-size: 14px;
+    --poppins-medium14-letter-spacing: 0px;
+    --poppins-medium14-line-height: 22px;
+    --poppins-medium14-font-style: normal;
+    --poppins-semibold-16-font-family: "Poppins", Helvetica;
+    --poppins-semibold-16-font-weight: 600;
+    --poppins-semibold-16-font-size: 16px;
+    --poppins-semibold-16-letter-spacing: 0px;
+    --poppins-semibold-16-line-height: 24px;
+    --poppins-semibold-16-font-style: normal;
+    --icon-size-icon-size: 100px;
+  }
+  
+  /*
+  
+  To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+  
+  <body data-icon-size-mode="LG">
+      <!-- the rest of your content -->
+  </body>
+  
+  You can apply the theme on any DOM node, not just the `body`
+  
+  */
+  
+  [data-icon-size-mode="LG"] {
+    --icon-size-icon-size: 100px;
+  }
+  
+  [data-icon-size-mode="MG"] {
+    --icon-size-icon-size: 80px;
+  }
+  
+  [data-icon-size-mode="CG"] {
+    --icon-size-icon-size: 50px;
+  }
+  

@@ -1,0 +1,63 @@
+{% extends "baselogin.html" %}
+{% load static %}
+
+{% block body %}
+<div class="session-body-container">
+  <div class="session-container">
+
+    <h2 class="session-title">Registro de Sesión</h2>
+    <p class="session-subtitle">¡Construyamos algo genial!</p>
+
+    <form class="session-form" method="post">
+      {% csrf_token %}
+      <div class="session-form-group">
+        <label for="nombre" class="session-form-label">Ingresa tu Usuario</label><br>
+        {{ form.username }}
+      </div>
+      <div class="session-form-group">
+        <label for="correo" class="session-form-label">Ingresa tu correo</label><br>
+        {{ form.email }}
+      </div>
+      <div class="session-form-group-password">
+        <div class="session-form-group">
+          <label for="password" class="session-form-label">Contraseña</label><br>
+          {{ form.password1 }}
+          
+        </div>
+        <div class="session-form-group">
+          <label for="password-confim" class="session-form-label"> Repite contraseña</label><br>
+          {{ form.password2 }}
+          <div class="password-toggle-confirm" onclick="togglePasswordVisibilityresgis()">
+            <img src="{% static 'imgs/eye-off.png' %}" alt="Toggle Password Visibilitys">
+          </div>
+        </div>
+      </div>
+      <div class="terminos">
+          <input type="Checkbox" id="acept" name="acept" placeholder="Acepto Terminos y condiciones" required>
+          <label for="acept" class="terminos_cond"><a href="">Acepto Terminos y condiciones</a> </label>
+      </div>
+
+      <button type="submit" class="session-btn-submit">Registrar</button>
+      <div class="forgot-password-container"> <!-- Contenedor agregado -->
+        <a href="{% url 'password_reset'%}" class="forgot-password">¿Olvidaste tu contraseña?</a>
+      </div>
+    </form>
+    <div class="social-login-container-regis">
+      <div class="social-login-regis" onclick="handleSocialSingIn('facebook')">
+        <img src="{% static 'imgs/faceIconIni.png' %}" />
+        <div class="text-wrapper">Registarse con Facebook</div>
+      </div>
+      <div class="social-login-regis" onclick="handleSocialSingIn('google')">
+        <img src="{% static 'imgs/gogleIcon.png' %}" />
+        <div class="text-wrapper">Registarse con Google</div>
+      </div>
+    </div>
+    <div class="signup-text-container"> <!-- Contenedor agregado -->
+      <p class="signup-text">¿Tienes una cuenta? <a href="{% url 'login' %}" class="signup-link">Inicia Sesion</a></p>
+    </div>
+  </div>
+</div>
+
+
+<!-- El resto del contenido de tu sitio web va aquí -->
+{% endblock %}

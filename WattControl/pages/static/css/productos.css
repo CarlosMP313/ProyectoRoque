@@ -1,0 +1,61 @@
+
+.cointenidoInicioProductos {
+    text-align: center;
+}
+
+.contsProductos {
+    width: 100%;
+    margin: auto;
+}
+
+.solicitaInfoProductos {
+    background-color: #FCE2AA;
+    position: relative;
+    top:-10px;
+    width: 100%; /* Ancho del div */
+    height: 300px; /* Altura del div */
+    display: flex; /* Utiliza flexbox para centrar verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.solicitaInfoProductos a {
+    color: #ffffff; /* Color del texto del enlace */
+    position: relative;
+    font-weight: 600;
+    font-size: 30px; /* Tamaño de la fuente */
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+}
+
+.solicitaInfoProductos a:hover {
+    font-size: 34px; /* Tamaño de la fuente */
+    text-decoration: underline; /* Agrega subrayado al pasar el cursor */
+}
+.textproductos1 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: x-large;
+  }
+
+  .textproductos2 {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    font-size: xx-large;
+  }
+  .textproductos3  {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 80px;
+  }
+  .textproductos3 h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: x-large;
+  }
+  .textproductos3 .h4product {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: large;
+  }

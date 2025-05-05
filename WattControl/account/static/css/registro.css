@@ -1,0 +1,197 @@
+.session-body-container {
+  background-color: #EFE9E9;
+  padding-top: 20px; /* Espacio hacia arriba */
+  padding-bottom: 20px; /* Espacio hacia abajo */
+}
+.session-container {
+  font-family: Arial, sans-serif;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.session-title {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.session-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.session-form-group {
+  margin-bottom: 20px;
+  position: relative; /* Agregado para que la posición absoluta del botón funcione correctamente */
+}
+
+.session-form-group .session-form-label {
+  margin-bottom: 10px; /* Agrega espacio hacia abajo */
+}
+
+.session-form label {
+  font-size: 14px;
+  color: #333;
+}
+
+.session-form input[type="text"],
+.session-form input[type="password"],
+.session-form input[type="email"] {
+  width: calc(100% - 20px); /* Ancho igual al 100% del contenedor menos 20px de margen */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 20px; /* Agrega un margen derecho */
+}
+
+.session-btn-submit {
+  width: 100%; /* Establece el ancho del botón al 100% del contenedor */
+  display: block; /* Hace que el botón sea un elemento de bloque para ocupar todo el ancho disponible */
+  background-color: #009ef7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.forgot-password-container {
+  text-align: right; /* Alinea el contenedor a la derecha */
+  margin-top: 10px !important; /* Ajusta este valor según la cantidad de espacio deseado */
+
+}
+
+.forgot-password {
+  font-size: 14px;
+  color: #009ef7;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.signup-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+}
+
+.signup-link {
+  color: #009ef7;
+  text-decoration: none;
+}
+.signup-text-container{
+  text-align: center;
+}
+/*   */
+.social-login-regis {
+  display: flex;
+  width: 220px;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: var(--all-colorsstroke-color);
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transición para el cambio de color de fondo */
+}
+
+.social-login-regis:hover {
+  background-color: #f0f0f0; /* Cambia el color de fondo al pasar el cursor */
+}
+
+.social-login-regis:active {
+  background-color: #e0e0e0; /* Cambia el color de fondo cuando se hace clic */
+}
+
+.social-login-regis .image {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.social-login-regis .text-wrapper {
+  position: relative;
+  flex: 1;
+  margin-top: -1px;
+  font-family: var(--poppins-regular14-font-family);
+  font-weight: var(--poppins-regular14-font-weight);
+  color: var(--all-colorstext-primary-colortext-primary);
+  font-size: var(--poppins-regular14-font-size);
+  letter-spacing: var(--poppins-regular14-letter-spacing);
+  line-height: var(--poppins-regular14-line-height);
+  font-style: var(--poppins-regular14-font-style);
+}
+
+.social-login-container-regis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.session-form-group-password{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.session-form-group-password + .session-form-group-password{
+  margin-left: 10px;
+}
+
+
+.social-login-regis + .social-login-regis {
+  margin-left: 20px; /* Ajusta este valor según la cantidad de espacio deseado */
+}
+
+
+.password-toggle {
+  cursor: pointer;
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.password-toggle img {
+  width: 20px;
+  height: auto;
+}
+
+.session-form-group label {
+  margin-bottom: 10px; /* Agrega espacio hacia abajo */
+}
+
+.password-toggle-confirm {
+  cursor: pointer;
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.password-toggle-confirm img {
+  width: 20px;
+  height: auto;
+}
+
+
+.terminos{
+  text-align: center;
+  margin-bottom: 10px;
+  
+}
+
+.terminos a{
+  color: #009ef7;
+  text-decoration: none;
+}

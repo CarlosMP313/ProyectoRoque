@@ -1,0 +1,25 @@
+{% load static %}
+<div class="sidebar" id="sidebar">
+    <!-- Contenido del sidebar aquí -->
+    <ul>
+      <img class="closeIcon" src="{% static 'imgs/close.svg' %}" alt="Cerrar"  onclick="closeSidebar()" />
+      <img class="nomI" src='{% static "imgs/nom.png" %}' />
+      <li class="inic" id="login-link"><a href="{% url  'login'  %}">Iniciar Sesión</a></li>
+  
+        <li class="ref"><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li class="ref"><a href="{% url 'productos' %}">Productos</a></li>
+        <li class="ref"><a href="{% url 'nosotros' %}">Nosotros</a></li>
+        <li class="ref"><a href="{% url 'soporte' %}">Soporte</a></li>
+        <li class="ref"><a href="#">Blog</a></li>
+        <li class="ref"><a href="{% url 'contacto' %}">Contactanos</a></li>
+        <!-- Redes-->
+       <div class="redessiderbar">
+          <h2>Síguenos</h2>
+          <a href="https://www.facebook.com/profile.php?id=100007147006508"><img src="{% static 'imgs/facebook_symbol.svg' %}" alt="Facebook"></a>
+        <a href="https://www.instagram.com/carlos_martinez_mp/"><img src="{% static 'imgs/instagram_logo.svg' %}" alt="Instragram"></a>
+        <a href="https://www.tiktok.com/@carloselchikitibu"><img src="{% static 'imgs/tiktok_symbol.svg' %}" alt="Tiktok"></a>
+        </div>
+  
+    </ul>
+  </div>
+  <!-- Sidebar -->

@@ -1,0 +1,177 @@
+{% extends "baselogin.html" %} {% load static %} 
+{% block title%}Inicio{%endblock%} {% block body %}
+
+<div class="productos-container">
+  <div class="contenedor-productos">
+    <div class="labelmisproductos">
+      <h2>Mis productos</h2>
+      <button
+        id="abrirModalD"
+        type="submit"
+        class="buttonproductos"
+        onclick="abrirModal()"
+      >
+        <img
+          class="agregarproduct"
+          src="{% static 'imgs/add-circle-Pro.png' %}"
+          alt="Enviar"
+        />
+      </button>
+    </div>
+    <nav class="productosDMy">
+      <ul class="listaProductos">
+        {% for producto in productos %}
+        <div class="estsdoproductodiv">
+          <li class="itemProducto">
+            <img
+              class="imagen-anchura-completa"
+              src="{% static 'imgs/' %}{{ producto.nomImagen }}"
+              alt="{{ producto.nombre }}"
+            />
+            {% for relacion in producto.relacionup_set.all %}
+            <h2>{{ producto.nombre }}</h2>
+            <img
+              class="estadoImagen"
+              src="{% if relacion.estado == 'Activo' %}{% static 'imgs/truecircle.png' %}{% else %}{% static 'imgs/flasecircle.png' %}{% endif %}"
+              alt="Estado"/>
+            <div class="detallesProducto">
+              <p>Nombre: {{ producto.nombre }}</p>
+              <p>IMEI: {{ relacion.imei }}</p>
+              <p>Número de serie: {{ relacion.numero_serie }}</p>
+              <p>Modelo: {{ relacion.modelo }}</p>
+            </div>
+          </li>
+          <p class="estadoProducto">{{ relacion.estado }}</p>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <!--      probar           -->
+    <div id="modal" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar" id="cerrarModalD" onclick="cerrarModal()">&times;</span>
+        <div class="modal-contenidos-uno">
+          <!-- Contenido del menú de productos aquí -->
+          <h2 class="h2porduct">Buscar Articulos</h2>
+          <!-- Aquí coloco tus elementos de menú -->
+
+          <div class="search-containerproductos">
+            <input
+              type="text"
+              id="querySoportproductosBus"
+              class="querySoportproductos"
+              name="querySoport"
+              placeholder="Utilizar buscardor..."
+              required
+            />
+            <button type="submit" class="buttonproductos">
+              <img
+                class="searchSoprtproductos"
+                src="{% static 'imgs/search.png' %}"
+                alt="Enviar"
+              />
+            </button>
+          </div>
+
+          <nav class="productosDMyBusque">
+            <ul class="listaProductosBusque">
+              {% for producto in productosA %}
+              <li class="itemProductoBusque" data-producto-id="{{ producto.id }}">
+                <img
+                  class="imagen-anchura-completa"
+                  src="{% static 'imgs/' %}{{ producto.nomImagen }}"
+                  alt="{{ producto.nombre }}"
+                />
+                <h2>{{ producto.nombre }}</h2>
+              </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+        
+        <!--      probar           -->
+      </div>
+    </div>
+    <div id="model-dos" class="model-dos">
+      <div id="formularioAgregarProducto" class="formularioAgregarProducto" style="display: none">
+        <span class="cerrar2" id="cerrarModalD2" onclick="cerrarModal2()">&times;</span>
+        <h2>Agregar Producto</h2>
+        <form
+          id="formAgregarProducto"
+          action="{% url 'agregar_producto' %}"
+          method="POST"
+        >
+          {% csrf_token %}
+          <input type="hidden" id="productoIda" name="productoIda" />
+          
+          <div class="form-groupP">
+            <label for="numeroSerie">Número de serie:</label>
+            <input
+              type="text"
+              id="numeroSerie"
+              name="numeroSerie"
+              placeholder="Número de serie"
+              required
+            />
+          </div>
+          <div class="form-groupP">
+            <label for="estado">Estado:</label>
+            <input
+              type="text"
+              id="estado"
+              name="estado"
+              value="Activo"
+              readonly
+            />
+          </div>
+          <div class="form-groupP">
+            <label for="fechaCompra">Fecha de compra:</label>
+            <input
+              type="date"
+              id="fechaCompra"
+              name="fechaCompra"
+              required
+            />
+          </div>
+          <div class="form-groupP">
+            <label for="tiempoGarantiaAnios"
+              >Tiempo de garantía en años:</label
+            >
+            <input
+              type="text"
+              id="tiempoGarantiaAnios"
+              name="tiempoGarantiaAnios"
+              placeholder="Tiempo de garantía en años"
+              required
+            />
+          </div>
+          <div class="form-groupP">
+            <label for="imei">IMEI:</label>
+            <input
+              type="text"
+              id="imei"
+              name="imei"
+              placeholder="IMEI"
+              required
+            />
+          </div>
+          <div class="form-groupP">
+            <label for="modelo">Modelo:</label>
+            <input
+              type="text"
+              id="modelo"
+              name="modelo"
+              placeholder="Modelo"
+              required
+            />
+          </div>
+          <button type="submit" class="agregarproductoUser">Agregar</button>
+        </form>
+      </div>
+    </div>
+
+    {% endblock %}
+  </div>
+</div>

@@ -1,0 +1,113 @@
+.sidebarLogin {
+    height: 100vh;
+    width: 300px;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #FCE2AA;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1000; /* Asegúrate de que la barra lateral se superponga sobre otros elementos */
+}
+.nomIL{
+   
+    display: block; /* Hacer que la imagen sea un bloque */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.inicL{
+    margin-top: 10%;
+    list-style-type: none;
+    font-size: 30px;
+    text-align: center;
+}
+.refL{
+    margin-top: 2%;
+    list-style-type: none;
+    padding: 0;
+    font-family: "Inter Medium", sans-serif;
+    font-size: 30px;
+}
+
+.refL{
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+  }
+  
+.inicL::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 4px;
+    background-color: #ffffff; /* Color de la línea */
+    list-style-type: none;
+    margin: 0 auto; /* Centrar horizontalmente */
+  }
+
+.sidebarLogin li {
+    padding: 10px;
+}
+
+.sidebarLogin a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+.closeIconL{
+    cursor: pointer;
+    position: absolute; /* Establece la posición absoluta para el ícono de cierre */
+    top: 10px; /* Lo posiciona 10px desde la parte superior del sidebar */
+    right: 10px; /* Lo posiciona 10px desde el lado derecho del sidebar */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+}
+
+.redessiderbarL {
+    /* Estilos del div de redes */
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: 0; /* Colocar en la parte inferior */
+    left: 0; /* Alinear a la izquierda */
+    width: 100%; /* Ocupar todo el ancho del sidebar */
+    text-align: center; /* Centrar elementos internos horizontalmente */
+}
+  
+.redessiderbaL h2 {
+    /* Estilos del título "Síguenos" */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    color: #fff;
+    font-size: x-large;
+}
+.redessiderbarL {
+    /* Estilos del div de redes */
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: 0; /* Colocar en la parte inferior */
+    left: 0; /* Alinear a la izquierda */
+    width: 100%; /* Ocupar todo el ancho del sidebar */
+    text-align: center; /* Centrar elementos internos horizontalmente */
+    margin-bottom: 25%;
+}
+  
+.redessiderbarL h2 {
+    /* Estilos del título "Síguenos" */
+    color: #ffffff;
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.redessiderbarL a {
+    margin: 0 10px; /* Espacio a la derecha e izquierda de cada enlace */
+}
+
+/* Añade el siguiente estilo para cubrir toda la pantalla con un fondo semitransparente al abrir la barra lateral */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta el nivel de transparencia aquí */
+    top: 0;
+    left: 0;
+    z-index: 999; /* Asegúrate de que la capa de superposición esté detrás de la barra lateral */
+    display: none; /* Oculta inicialmente la capa de superposición */
+}

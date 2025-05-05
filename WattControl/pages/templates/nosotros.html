@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Nosotros{% endblock%}
+
+{% block body %}
+<div class="container-Nosotros">
+    <div class="contInternalNosotros">
+
+        <div class="nosotrosManagement">
+            <img src=' {% static "imgs/nosotrosPrincipal.png"%}' />
+        </div>
+
+        <div class="groupedMision">
+            <h2>Misión</h2>
+            <p>En función de los patrones de consumo de electricidad </p>
+            <p> y condiciones ambientales del hogar, se implementan </p>
+            <p>instrumentos capaces de optimizar el gasto energético.</p>
+        </div>
+
+        <div class="groupedVision">
+            <h2>Visión</h2>
+            <p> Proveer a los hogares del mundo una respuesta en pro del </p>
+            <p> ahorro energético y, por ende, promover la sostenibilidad. </p>
+        </div>
+
+        <div class="externalValores">
+            <div class="internalValores">
+            <div class="iconManagement">
+
+                <div class="firstPairValores">
+                    <div class="valorContainer">
+                        <img src='{% static "imgs/imgIntegridad.png"%}' />
+                        <p>Integridad</p>
+                    </div>
+                    <div class="valorContainer">
+                        <img src='{% static "imgs/imgSostenibilidad.png"%}' />
+                        <p>Sostenibilidad</p>
+                    </div>
+                </div>
+                
+
+                <div class="secondPairValores">
+                    <div class="valorContainer">
+                    <img src='{% static "imgs/imgCompromisoCliente.png"%}' />
+                    <p> Compromiso con el cliente </p>
+                    </div>
+                    <div class="valorContainer">
+                    <img class="innovacionValor" src='{% static "imgs/imgInnovacion.png"%}' />
+                    <p> Innovación </p>
+                </div>
+                </div>
+
+                <div class="thirdPairValores">
+                    <div class="valorContainer">
+                    <img src='{% static "imgs/imgResponsabilidadSocial.png"%}' />
+                    <p> Responsabilidad social </p>
+                </div>
+                <div class="valorContainer">
+                    <img src='{% static "imgs/imgCalidadYExcelencia.png"%}' />
+                    <p> Calidad y excelencia </p>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="solicitaInfo">
+            <a href="{% url 'productos' %}"> Solicítanos información → </a>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

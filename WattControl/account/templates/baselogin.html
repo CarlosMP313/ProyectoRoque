@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{% block title %}SMLCS{% endblock%}</title>
+  <meta charset="utf-8" />
+  <meta name="Carlos Martinez piña y Luis javier Ramirez Arias " content="ITM" />
+  <meta name="Practica en clases" content="Proyecto final  ." />
+  <script src="{% static 'js/inicioSecion.js' %}" rel="JavaScript" type="text/javascript"></script>
+  <script src="{% static 'js/registro.js' %} " rel="JavaScript" type="text/javascript"></script>
+  <script src="{% static 'js/sidebarLogin.js' %}" rel="JavaScript" type="text/javascript"></script>
+  <script src="{% static 'js/sidebarL.js' %}" rel="JavaScript" type="text/javascript"></script>
+  <script src="{% static 'js/garantias.js' %}" rel="JavaScript" type="text/javascript"></script>
+  <script src="{% static 'js/misproductos.js' %}" rel="JavaScript" type="text/javascript"></script>
+  <script src="{% static 'js/detallesconsumo.js' %}" rel="JavaScript" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <!-- <link rel="stylesheet" href="globals.css" />   -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href="{% static 'css/styleguide.css' %}" type='text/css' />
+  <link rel="icon" href="{% static 'imgs/iso.png' %}" />
+  <link href="{% static 'css/baseCssLogin.css' %}" rel="stylesheet" type='text/css' />
+  <link rel="stylesheet" type='text/css' href="{% static 'css/sidebarL.css' %}"/>
+  <link rel="stylesheet" type='text/css' href="{% static 'css/registro.css' %}"/>
+  <link rel="stylesheet" type='text/css' href="{% static 'css/inicio_secion.css' %}"/>
+  <link rel="stylesheet" type='text/css' href="{% static 'css/homeInicioS.css' %}"/>
+  <link rel="stylesheet" type='text/css' href="{% static 'css/siderbarlogin.css' %}"/>
+  <link rel="stylesheet" type='text/css' href="{% static 'css/misproductos.css' %} "/>
+  <link rel="stylesheet" type='text/css' href="{% static 'css/garantias.css' %}"/>
+  <link rel="stylesheet" type='text/css' href="{% static 'css/detallesconsumo.css' %}"/>
+
+  
+  
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <img src="{% static 'imgs/logo_h.png' %}" />
+      <img class="imgnomheader" src="{% static 'imgs/nom.png' %}" />
+      <img  class="barra" src="{% static 'imgs/menu1.svg' %}" onclick="{% if user.is_authenticated %}toggleSidebarL(){% else %}toggleSidebarLogin(){% endif %}"/>
+    </div>
+  </header>
+<!--  barra lateral-->
+<!-- Sidebar -->
+{% if user.is_authenticated %}
+    {% include "barraInicioLogin.html" %}
+{% else %}
+    {% include "barra_lateral1log.html" %}
+{% endif %}
+
+  {% block body %}
+  <h1>Cuerpo</h1>
+  <!-- El resto del contenido de tu sitio web va aquí -->
+  {% endblock%}
+</div>
+<div id="overlay" class="overlay"></div>
+  <footer>
+    <div class="container-f">
+      <div class="footer-content">
+        <nav>
+          <ul>
+            
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+            <li><a  href="{% url 'soporte' %}">Soporte</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="alerta">
+        <h2>Recibe Alertas</h2>
+        <form id="emailForm" method="post" action="{% url 'enviar_correos' %}"/>
+        {% csrf_token %}
+          <div class="input-container">
+            <input type="email" id="emailInput" name="emailInput" placeholder="Correo electrónico" required>
+            <button type="submit" class="botonlogin"><img class="send" src="{% static 'imgs/send.svg' %}" alt="Enviar"></button>
+          </div>
+        </form>
+        {% if messages %}
+           {% for message in messages %}
+            <div class="alert {% if message.tags %} alert-{{ message.tags }} {% endif %}" role="alert">
+                {{ message }}
+            </div>
+           {% endfor %}
+         {% endif %}
+      </div>
+
+      <div class="redes">
+        <h2>Síguenos</h2>
+        <a href="https://www.facebook.com/profile.php?id=100007147006508"><img src="{% static 'imgs/facebook_symbol.svg' %}" alt="Facebook"></a>
+        <a href="https://www.instagram.com/carlos_martinez_mp/"><img src="{% static 'imgs/instagram_logo.svg' %}" alt="Instragram"></a>
+        <a href="https://www.tiktok.com/@carloselchikitibu"><img src="{% static 'imgs/tiktok_symbol.svg' %}" alt="Tiktok"></a>
+      </div>
+    </div>
+
+    <div class="avisos-footer">
+      <div class="avisos-content">
+      <nav>
+        <ul>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Política de cookies</a></li>
+          <li><a href="#">Política SGI</a></li>
+        </ul>
+      </nav>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

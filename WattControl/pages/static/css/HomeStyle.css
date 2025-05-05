@@ -1,0 +1,508 @@
+.ini1I {
+    background-image: url('https://econova-institute.com/wp-content/uploads/2022/07/co2.jpg.webp');
+    background-size: 100%; /* Ajusta el tamaño de la imagen de fondo para cubrir completamente el contenedor */
+    background-position: 50% 30%; /* Centra la imagen de fondo */
+    background-repeat: no-repeat;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sloganIni{
+    background-color: #FCE2AA; 
+    margin-left: 30px; 
+    font-size: 150px; /* Tamaño de fuente */
+}
+
+.sloganIni h1 {
+    color: rgb(255, 255, 255); /* Establece el color del texto en blanco para que sea legible */
+    text-align:left;
+    font-size: 70px; /* Tamaño de fuente */
+    padding-left: 30px;
+    margin-bottom: -35px; /* Reducir el margen inferior entre los elementos h1 */
+    line-height: 1;
+}
+
+.sloganIni img {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 65px;
+    display: block; /* Para que los márgenes automáticos funcionen */
+    margin: 0 auto; /* Establece márgenes automáticos horizontalmente */
+}
+
+.contact-button {
+    background-color: #66A8C5;
+    color: #ffffff;
+    border: none;
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative; /* mover el boton respecto a su posicion original */
+    top: -30px; /* Mueve el botón 10px hacia arriba */
+    right: -30px; /* Mueve el botón 10px hacia la derecha */
+    border-radius: 50px; 
+    transition: all 0.3s ease; /* Agrega una transición suave a todos los cambios */
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+    font-size: 22px;
+   
+transform: scale(1.2); /* Escala el botón al 120% del tamaño original */
+}
+
+.custom-button {
+    background-color: #C6C6C6;
+    color: #ffffff;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%; /* Hace que el botón tenga forma circular */
+    width: 75px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    position: absolute; /* Se posiciona absolutamente */
+    left: 50%; /* Se mueve al 50% del contenedor */
+    transform: translateX(-50%); /* Corrige la posición para centrarlo */
+    top: 900px;
+}
+
+.custom-button:hover {
+    font-size: 34px;
+    background-color: #838383;
+}
+    
+.eficieciaIni {
+    text-align: center; /* Centra horizontalmente el contenido */
+    margin-top: 70px;
+}
+
+.titleEfi {
+    background-color: #66A8C5;
+    color: #ffffff;
+    font-size: 24px;
+    text-align:center;
+    margin-left: 340px;
+    margin-right: 340px;
+}
+
+.eficieciaIni img {
+    display: inline-block; /* Para que los márgenes automáticos funcionen */
+    margin: 0 auto; /* Centra horizontalmente la imagen */
+    top: -30px;
+}
+
+.ofertaIni {
+    background-color: #C6C6C6;
+    position: relative;
+    width: 100%; /* Ancho del div */
+    height: 600px; /* Altura del div */
+}
+
+.ofertaIni h2 {
+    display: inline-block; /* Hace que el h2 se ajuste al tamaño de su contenido */
+    background-color: #66A8C5;
+    color: #ffffff;
+    padding: 7px;
+    font-size: 36px;
+    text-align:right;
+    bottom: 75%;
+    right: 20%;
+    position: absolute;
+}
+
+.p1 {
+    color: #000000; /* Color del texto */
+    font-weight:500;
+    font-size: 26px; /* Tamaño de la fuente */
+    text-align: justify; 
+    position: absolute;
+    line-height: 0.5; /* Espaciado entre líneas */
+    left: 53%;
+    bottom:52%;
+}
+
+.p2 {
+    color: #000000; /* Color del texto */
+    font-weight:500;
+    font-size: 26px; /* Tamaño de la fuente */
+    text-align: justify; 
+    position: absolute;
+    line-height: 0.5; /* Espaciado entre líneas */
+    left: 53%;
+    bottom: 29%;
+}
+
+.p3 {
+    color: #000000; /* Color del texto */
+    font-weight:500;
+    font-size: 26px; /* Tamaño de la fuente */
+    text-align: justify; 
+    position: absolute;
+    line-height: 0.5; /* Espaciado entre líneas */
+    left: 53%;
+    bottom: 5%;
+}
+
+.ofertaIni img {  
+    margin-left: -1%;       
+}
+
+.ofertaIni a {
+    color: #000000; /* Color del texto del enlace */
+    font-weight:500;
+    font-size: 22px; /* Tamaño de la fuente */
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+    position: relative;
+    right: 422px; /* Mueve el enlace 20px desde el borde izquierdo del contenedor */
+    top: 10px; /* Mueve el enlace 20px desde el borde inferior del contenedor */
+}
+
+.ofertaIni a:hover {
+    text-decoration: underline; /* Agrega subrayado al pasar el cursor */
+    font-size: 26px; 
+}
+
+.dispositivoIni {
+    position: relative; /* Asegura que los elementos posicionados relativamente dentro de .dispositivoIni se ubiquen correctamente */
+    height: 100vh;
+    margin-bottom: 6%;
+    margin-top: 2%;
+    margin-left: 4%;
+}
+/*   */
+
+.box {
+    position: relative;
+    height: 100vh;
+    
+  }
+  .group {
+    position: relative;
+    
+  }
+  
+
+  
+  .dispositivoIni .box .overlap {
+    position: absolute;
+    width: 429px;
+    height: 115px;
+    top: 151px;
+    left: 486px;
+    background-color: #fce1a9;
+  }
+  
+  .dispositivoIni .box .text-wrapper {
+    position: absolute;
+    width: 88px;
+    top: 30px;
+    left: 171px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 42px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  
+  
+  .dispositivoIni .box .overlap-group-wrapper {
+    position: absolute;
+    width: 590px;
+    height: 81px;
+    top: 0;
+    left: 49px;
+  }
+  
+  .dispositivoIni .box .overlap-group {
+    position: relative;
+    width: 588px;
+    height: 81px;
+    background-color: #65a8c5;
+  }
+  
+  .dispositivoIni .box .div {
+    position: absolute;
+    width: 571px;
+    top: 10px;
+    left: 9px;
+    text-shadow: 0px 4px 4px #00000040;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 46px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .dispositivoIni .box .overlap-2 {
+    position: absolute;
+    width: 429px;
+    height: 485px;
+    top: 263px;
+    left: 0;
+    background-color: #e1e0e0;
+    z-index: 2; /* Añade un valor de z-index más alto */
+  }
+  
+  .dispositivoIni .box .image {
+    width: 327px;
+    height: 327px;
+    top: 21px;
+    left: 52px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .dispositivoIni .box .monitoriza-con {
+    position: absolute;
+    width: 381px;
+    top: 295px;
+    left: 27px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .dispositivoIni .box .div-wrapper {
+    position: absolute;
+    width: 429px;
+    height: 115px;
+    top: 148px;
+    left: 0;
+    background-color: #fce1a9;
+  }
+  
+  .dispositivoIni .box .text-wrapper-2 {
+    position: absolute;
+    width: 80px;
+    top: 30px;
+    left: 175px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 42px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  .dispositivoIni .box .overlap-3 {
+    position: absolute;
+    width: 429px;
+    height: 485px;
+    top: 263px;
+    left: 486px;
+    z-index: 2; /* Añade un valor de z-index más alto */
+    background-color: #e1e0e0;
+  }
+  
+  .dispositivoIni .box .img {
+    width: 355px;
+    height: 369px;
+    top: 18px;
+    left: 37px;
+    position: absolute;
+    object-fit: cover;
+    z-index: 2; /* Añade un valor de z-index más alto */
+  }
+  
+
+  
+  .dispositivoIni .box .p {
+    position: absolute;
+    width: 414px;
+    top: 292px;
+    left: 23px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .dispositivoIni .box .overlap-wrapper {
+    position: absolute;
+    width: 272px;
+    height: 92px;
+    top: 617px;
+    left: 1047px;
+  }
+  
+  .dispositivoIni .box .overlap-4 {
+    position: relative;
+    width: 270px;
+    height: 92px;
+    top: 80;
+    background-color: #fce1a9;
+    border-radius: 60px;
+    cursor: pointer;
+  }
+  .dispositivoIni .box .text-wrapper-3 {
+    position: relative;
+    width: 198px;
+    top: 25px;
+    left: 31px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+  }
+  
+  .dispositivoIni .box .overlap-4:Hover {
+    background-color: #ecbb57;
+    
+   
+  }
+  .dispositivoIni .box .text-wrapper-3:hover{
+    font-size: 34px;
+  }
+ /* Mueve el botón 10px hacia arriba */
+ .dispositivoIni .box .contact-buttonP {
+    background-color: #fce1a9;
+    color: #ffffff;
+    border: none;
+    padding: 20px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; /* mover el boton respecto a su posicion original */
+    top: 620px;
+    left: 1078px;
+    border-radius: 50px; 
+    transition: all 0.3s ease; /* Agrega una transición suave a todos los cambios */
+}
+
+.contact-buttonP:hover {
+    background-color: #fbcc6d;
+    font-size: 24px;
+   
+transform: scale(1.2); /* Escala el botón al 120% del tamaño original */
+}
+ /* Mueve el botón 10px hacia arriba */
+
+  .dispositivoIni .box a {
+    text-decoration: none; /* Eliminar la línea subrayada */
+    color: black; /* Cambiar el color del texto */
+    color: #ffffff;
+    text-align: center;
+}
+  
+
+
+  
+  .dispositivoIni .box .image-2 {
+    width: 184px;
+    height: 202px;
+    top: 172px;
+    left: 1102px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .dispositivoIni .box .text-wrapper-4 {
+    position: absolute;
+    width: 520px;
+    top: 351px;
+    left: 928px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 46px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+
+/*  */
+
+
+
+
+.sostenibilidadIni img {
+    position: relative;
+    width: 100%; /* Ancho del div */
+   z-index: -1;
+}
+
+.sostenibilidadIni .sosTexto {
+    color: #ffffff;
+    writing-mode: vertical-rl; /* Esto rota el texto verticalmente de derecha a izquierda */
+    text-orientation: upright; /* Esto asegura que el texto esté orientado hacia arriba */
+    font-size: 35px; /* Tamaño de la fuente */
+    line-height: 1; /* Espaciado entre líneas */
+    position: absolute;
+    top: 465%;
+    left: 2%;
+}
+
+.sostenibilidadIni .mundoTexto {
+    color: #ffffff;
+    writing-mode: vertical-lr; /* Esto rota el texto verticalmente de izquierda a derecha */
+    text-orientation: upright; /* Esto asegura que el texto esté orientado hacia arriba */
+    font-size: 35px; /* Tamaño de la fuente */
+    line-height:1 ; /* Espaciado entre líneas */
+    position: absolute;
+    top: 465%; /* Ajusta la posición superior según sea necesario */
+    left: 90%; /* Ajusta la posición izquierda según sea necesario */
+}
+
+
+.sostenibilidadIni .sostenibilidad-button {
+    background-color: #C6C6C6;
+    color: #ffffff;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%; /* Hace que el botón tenga forma circular */
+    width: 75px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    position: absolute; /* Se posiciona absolutamente */
+    left: 50%; /* Se mueve al 50% del contenedor */
+    transform: translateX(-50%); /* Corrige la posición para centrarlo */
+    top: 558%;
+    z-index: 2;
+}
+
+.sostenibilidadIni .sostenibilidad-button:hover {
+    font-size: 34px;
+    background-color: #838383;
+
+}
+
+.solicitaInfo {
+    background-color: #FCE2AA;
+    position: relative;
+    top:-10px;
+    width: 100%; /* Ancho del div */
+    height: 300px; /* Altura del div */
+    display: flex; /* Utiliza flexbox para centrar verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.solicitaInfo a {
+    color: #ffffff; /* Color del texto del enlace */
+    position: relative;
+    font-weight: 600;
+    font-size: 30px; /* Tamaño de la fuente */
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+}
+
+.solicitaInfo a:hover {
+    font-size: 34px; /* Tamaño de la fuente */
+    text-decoration: underline; /* Agrega subrayado al pasar el cursor */
+}
+
+

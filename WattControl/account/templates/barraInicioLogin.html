@@ -1,0 +1,47 @@
+{% load static %}
+<div class="sidebarLL" id="sidebarLL">
+  <!-- Contenido del sidebar aquí -->
+  <div class="closeIconoDiv">
+    <img
+      class="closeIconLL"
+      src="{% static 'imgs/close.svg' %}"
+      alt="Cerrar"
+      onclick="closeSidebarL()"
+    />
+  </div>
+
+  <div class="iniLoginLL">
+    <img class="nomILL" src='{% static "imgs/nom.png" %}' />
+
+    <img class="nomILL" src='{% static "imgs/fotoIcon.png" %}' />
+    {% if request.user.is_authenticated%}
+    <h2>Hola,{{ request.user.first_name|default:request.user.username }}</h2>
+    {% else %}
+    <h2>Hola, invasor</h2>
+    {% endif %}
+  </div>
+  <ul>
+    <li class="refLL"><a href="{% url 'home' %}">Inicio</a></li>
+    <li class="refLL"><a href="{% url 'misproductos' %}">Mis Productos</a></li>
+    <li class="refLL"><a href="{% url 'garantias' %}">Garantias</a></li>
+    <li class="refLL"><a href="{% url 'detallesConsumo' %}">Detalles consumo</a></li>
+  </ul>
+  <li class="inicLL" id="login-linkLL">
+    <a href="{% url 'logoutH' %}">Cerrar Sesión</a>
+  </li>
+  <!-- Redes-->
+
+  <div class="redessiderbarLL">
+    <h2>Síguenos</h2>
+    <a href="https://www.facebook.com/profile.php?id=100007147006508"
+      ><img src="{% static 'imgs/facebook_symbol.svg' %}" alt="Facebook"
+    /></a>
+    <a href="https://www.instagram.com/carlos_martinez_mp/"
+      ><img src="{% static 'imgs/instagram_logo.svg' %}" alt="Instragram"
+    /></a>
+    <a href="https://www.tiktok.com/@carloselchikitibu"
+      ><img src="{% static 'imgs/tiktok_symbol.svg' %}" alt="Tiktok"
+    /></a>
+  </div>
+</div>
+<!-- Sidebar -->

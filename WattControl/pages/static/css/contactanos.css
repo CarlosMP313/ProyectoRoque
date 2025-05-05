@@ -1,0 +1,174 @@
+
+.cointenidoInicioLogin {
+    text-align: center;
+}
+
+.conts {
+    width: 100%;
+    margin: auto;
+}
+
+.Imagenconst {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.textContatIm {
+    position: absolute;
+    bottom: 40px;
+    right: 150px;
+}
+
+.textContatImP {
+    font-size: 40px;
+    font-weight: bold;
+    color: #FCE2AA;
+}
+
+.imagen-anchura-completa {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.textContact .TitleCont {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(158, 158, 158);
+}
+
+.textContact .subtitleCont {
+    text-align: center;
+    color: rgb(136, 136, 136);
+}
+
+.contTuIdea {
+    width: 100%;
+    background-color: #FCE2AA;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textContIdea {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Cambia los nombres de clase según lo solicitado */
+
+.contact-container {
+    background-color: #EFE9E9;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.contact-form {
+    font-family: Arial, sans-serif;
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.contact-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form-fields {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.contact-form-fields .form-label {
+    margin-bottom: 10px;
+}
+
+.terminosContact {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.terminosContact a {
+    color: #009ef7;
+    text-decoration: none;
+}
+
+.ContactanosBtun {
+    width: 100%;
+    display: block;
+    background-color: #009ef7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* Agrega tus estilos CSS aquí */
+
+.input-group {
+    display: flex;
+}
+
+.input-container {
+    flex: 1;
+    margin-right: 10px; /* Espacio entre los campos de entrada */
+}
+
+.input-container:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento para evitar desbordamiento */
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.input-container input {
+    width: 100%; /* Ocupa todo el espacio disponible */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.input-container + .input-container {
+    margin-left: 20px; /* Ajusta este valor según la cantidad de espacio deseado */
+    margin-right: 20px;  
+}
+
+.input-container {
+    width: 100%;
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-container textarea {
+    
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* Permite redimensionar verticalmente */
+    width: calc(100% - 18px); /* Resta el ancho del padding y del borde */
+    resize: none; /* Evita que el usuario pueda redimensionar */
+}
+
+/* Resto de estilos */

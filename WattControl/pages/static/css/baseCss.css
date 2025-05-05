@@ -1,0 +1,215 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+ 
+}
+
+header {
+  background-color: #F4FAFD;
+  color: #fff;
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .imgnomheader {
+  padding-right: 75px;
+}
+.container-f .alerta{
+  padding-left: 90px;
+}
+.barra{
+  cursor: pointer;
+}
+
+/* footer */
+footer {
+  background-color: #F4FAFD;
+  padding: 20px 0;
+  
+}
+
+.container-f {
+  max-width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.footer-content{
+  margin-top: 20px;
+}
+.footer-content nav ul li a {
+  text-decoration: none; /* Eliminar el subrayado de los enlaces */
+  color: #737373; /* Color del texto */
+  
+}
+.footer-content nav ul li a:hover {
+  color: rgb(49, 49, 49); /* Cambia el color del texto al pasar el ratón por encima */
+  
+}
+
+.alerta{
+  margin-top: 20px;
+}
+
+.alerta h2 {
+  margin-top: 0;
+  color: #737373;
+}
+
+.input-container {
+  display: inline-block;
+  position: relative;
+}
+
+#emailInput {
+  width: 250px; /* Ancho del input ajustado */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  vertical-align: middle; /* Alineación vertical en el centro */
+}
+
+.send-container {
+  position: relative; /* Establece el contenedor del botón en posición relativa */
+}
+
+.send {
+  position: absolute; /* Establece el botón de enviar en posición absoluta */
+  right: 10px; /* Ajusta el margen derecho */
+  top: 50%; /* Alinea verticalmente el botón de enviar */
+  transform: translateY(-70%); /* Centra verticalmente el botón */
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+}
+
+.input-container button[type="submit"] {
+  display: inline-block; /* Asegura que el botón de enviar se muestre correctamente */
+  padding: 0; /* Elimina el rellenfondoo predeterminado */
+  background: none; /* Elimina el  */
+  border: none; /* Elimina el borde */
+  vertical-align: middle; /* Alineación vertical en el centro */
+}
+
+
+.footer-content nav ul,
+.social-icons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-content nav ul li,
+.redes ul li {
+  display: block;
+  margin-bottom: 10px; /* Espacio entre elementos de la lista */
+  font-size: 29.5px; /* Tamaño de la letra */
+  
+}
+.redes h2{
+  text-align: center;
+  color: #737373;
+}
+
+.social-icons img {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.avisos-footer {
+  width: 100%;
+ display: block;
+  align-items: center;
+}
+
+.avisos-footer nav ul {
+  list-style: none;
+  align-items: center;
+}
+
+.avisos-footer nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.avisos-footer nav ul li a {
+  text-decoration: none; /* Eliminar el subrayado de los enlaces */
+  color: #333; 
+  font-size: 18px;
+}
+
+.avisos-footer nav ul li a:hover{
+  text-decoration: none; /* Eliminar el subrayado de los enlaces */
+  color: #a11a1a; 
+  font-size: 25px;
+}
+
+.avisos-footer {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+}
+
+.avisos-footer nav ul li:last-child {
+  margin-right: 0;
+}
+
+
+.redes a {
+  margin: 0 10px; /* Espacio a la derecha e izquierda de cada enlace */
+}
+
+
+
+/* Estilos predeterminados  fondo body*/
+.default-page {
+  background-color: #f2f2f2; /* Color de fondo predeterminado */
+}
+
+.fondocolorGris{
+  background-color: #EFE9E9; 
+}
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+}
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.overlayin {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta el nivel de transparencia aquí */
+  top: 0;
+  left: 0;
+  z-index: 999; /* Asegúrate de que la capa de superposición esté detrás de la barra lateral */
+  display: none; /* Oculta inicialmente la capa de superposición */
+}

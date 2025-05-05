@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{% block title %}SMLCS{% endblock%}</title>
+  <meta charset="utf-8" />
+  <meta name="Carlos Martinez piña y Luis javier Ramirez Arias " content="ITM" />
+  <meta name="Practica en clases" content="Proyecto final  ." />
+  <link href='{% static "css/baseCss.css" %}' rel="stylesheet" type='text/css' />
+  <link href='{% static "css/indexCss.css" %}' rel="stylesheet" type='text/css' />
+  <link href='{% static "css/registro.css" %}' rel="stylesheet" type='text/css' />
+  <link href='{% static "css/HomeStyle.css" %}' rel="stylesheet" type='text/css'/>
+  <link href='{% static "css/contactanos.css" %}' rel="stylesheet" type='text/css'/>
+  <link href='{% static "css/soporte.css" %}' rel="stylesheet" type='text/css'/>
+  <link href='{% static "css/nosotros.css" %}' rel="stylesheet" type='text/css'/>
+  <link href='{% static "css/productos.css" %}' rel="stylesheet" type='text/css'/>
+  <!-- <link rel="stylesheet" href="globals.css" />   -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='{% static "css/styleguide.css" %}' type='text/css' />
+  <link rel="icon" href=' {% static "imgs/iso.png" %}' />
+  <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+  <script rel="JavaScript" type="text/javascript" src="{% static 'js/sidebar.js' %}"></script>
+  <script  rel="JavaScript" type="text/javascript" src="{% static 'js/indexjs.js' %}"></script>
+  <script  rel="JavaScript" type="text/javascript" src="{% static 'js/soporte.js' %}"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <img src='{% static "imgs/logo_h.png" %}' />
+      <img class="imgnomheader" src='{% static "imgs/nom.png" %}' />
+      <img  class="barra" src='{% static "imgs/menu1.svg" %}' onclick="toggleSidebar()" />
+    </div>
+  </header>
+<!--  barra lateral-->
+<!-- Sidebar -->
+{% include "barra_lateral1.html"%}
+
+  {% block body %}
+  <h1>Cuerpo</h1>
+  <!-- El resto del contenido de tu sitio web va aquí -->
+  {% endblock%}
+</div>
+<div id="overlayin" class="overlayin"></div>
+  <footer>
+    <div class="container-f">
+      <div class="footer-content">
+        <nav>
+          <ul>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+            <li><a  href="{% url 'soporte' %}">Soporte</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="alerta">
+        <h2>Recibe Alertas</h2>
+        <form id="emailForm" method="post" action="{% url 'enviar_correosB' %}">
+        {% csrf_token %}
+          <div class="input-container">
+            <input type="email" id="emailInput" name="emailInput" placeholder="Correo electrónico" required>
+            <button type="submit"><img class="send" src="{% static 'imgs/send.svg' %}" alt="Enviar"></button>
+          </div>
+        </form>
+        {% if messages %}
+           {% for message in messages %}
+            <div class="alert {% if message.tags %} alert-{{ message.tags }} {% endif %}" role="alert">
+                {{ message }}
+            </div>
+           {% endfor %}
+         {% endif %}
+      </div>
+
+      <div class="redes">
+        <h2>Síguenos</h2>
+        <a href="https://www.facebook.com/profile.php?id=100007147006508"><img src="{% static 'imgs/facebook_symbol.svg' %}" alt="Facebook"></a>
+        <a href="https://www.instagram.com/carlos_martinez_mp/"><img src="{% static 'imgs/instagram_logo.svg' %}" alt="Instragram"></a>
+        <a href="https://www.tiktok.com/@carloselchikitibu"><img src="{% static 'imgs/tiktok_symbol.svg' %}" alt="Tiktok"></a>
+      </div>
+    </div>
+
+    <div class="avisos-footer">
+      <div class="avisos-content">
+        <nav>
+          <ul>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Política de cookies</a></li>
+          <li><a href="#">Política SGI</a></li>
+         </ul>
+       </nav>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

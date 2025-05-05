@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% load static %} {% block title %}SMLCS_2{%endblock%}
+{% block body %}
+<div class="contenedorProductos">
+  <div class="contsProductos">
+    <div class="textproductos1">
+      <h2>Hacemos realidad la digitalización</br> para el ahorro energético</h2>
+    </div>
+    <div class="textproductos2">
+      <h1>Productos</h1>
+    </div>
+    <div class="textproductos3">
+      <h3>Administra de forma inteligente tu energía</h3>
+      <h4 class="h4product">
+        Descubre lo que consumes para saber dónde puedes tomar medidas para
+        ahorrar en tu factura de luz.
+      </h4>
+    </div>
+
+    <nav class="productosDMy">
+      <ul class="listaProductos">
+        {% for producto in productos %}
+        <li class="itemProducto">
+          <img
+            class="imagen-anchura-completa"
+            src="{% static 'imgs/' %}{{ producto.nomImagen }}"
+            alt="{{ producto.nombre }}"
+          />
+          <h2>{{ producto.nombre }}</h2>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="solicitaInfoProductos">
+      <a href="{% url 'contacto' %}"> Solicítanos información → </a>
+    </div>
+  </div>
+</div>
+{% endblock%}

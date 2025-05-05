@@ -1,0 +1,94 @@
+.cointenidoInicioLogin {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f5f5f5; /* Light gray background color */
+}
+.text-wrapper{
+  font-size: xx-large;
+}
+
+.bien {
+  text-align: center;
+ 
+  margin-bottom: 3rem;
+  width: 90%;
+  margin-left: auto; /* Centra el elemento horizontalmente */
+  margin-right: auto; /* Centra el elemento horizontalmente */
+}
+
+.bienvenidos-a {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #4a4a4a; /* Darker text color */
+}
+
+.bienvenidos-a2 {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #4a4a4a; /* Darker text color */
+}
+
+.opcion-login {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.ContenidoRetangle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.rectangle {
+  flex-basis: calc(33.333% - 2rem);
+  margin-bottom: 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 5px; /* Rounded corners */
+}
+
+.titulo {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #4a4a4a; /* Darker text color */
+}
+
+.textLogin {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.textmidium {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #4a4a4a; /* Darker text color */
+  text-align: center;
+  display: flex;
+  margin-left: auto; /* Centra el div horizontalmente */
+  margin-right: auto; /* Centra el div horizontalmente */
+}
+
+.explora-nuestra {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #4a4a4a; /* Darker text color */
+}
+
+@media (max-width: 768px) {
+  .rectangle {
+    flex-basis: calc(50% - 2rem);
+  }
+}
+
+@media (max-width: 500px) {
+  .rectangle {
+    flex-basis: 100%;
+  }
+}
