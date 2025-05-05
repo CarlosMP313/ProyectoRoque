@@ -12,21 +12,21 @@
       {% csrf_token %}
       <div class="session-form-group">
         <label for="nombre" class="session-form-label">Ingresa tu Usuario</label><br>
-        {{ form.username }}
+        {{ form.username | escape }}
       </div>
       <div class="session-form-group">
         <label for="correo" class="session-form-label">Ingresa tu correo</label><br>
-        {{ form.email }}
+        {{ form.email | escape }}
       </div>
       <div class="session-form-group-password">
         <div class="session-form-group">
           <label for="password" class="session-form-label">Contraseña</label><br>
-          {{ form.password1 }}
+          {{ form.password1 | escape }}
           
         </div>
         <div class="session-form-group">
           <label for="password-confim" class="session-form-label"> Repite contraseña</label><br>
-          {{ form.password2 }}
+          {{ form.password2 | escape }}
           <div class="password-toggle-confirm" onclick="togglePasswordVisibilityresgis()">
             <img src="{% static 'imgs/eye-off.png' %}" alt="Toggle Password Visibilitys">
           </div>

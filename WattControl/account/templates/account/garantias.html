@@ -15,16 +15,16 @@
                   <li class="itemGarantias">
                       <img class="imagen-anchura-completa" src="{% static 'imgs/' %}{{ producto.nomImagen }}" alt="{{ producto.nombre }}" />
                       {% for relacion in producto.relacionup_set.all %}
-                      <h2>{{ producto.nombre }}</h2> 
+                      <h2>{{ producto.nombre | escape}}</h2> 
                       <img class="estadoImagengarantias" src="{% if relacion.garantia == 'Activa' %}{% static 'imgs/truecircle.png' %}{% else %}{% static 'imgs/flasecircle.png' %}{% endif %}" alt="Estado">
                       <div class="detallesGarantias">
-                        <p>Nombre: {{ producto.nombre }}</p>
-                        <p>IMEI: {{ relacion.imei }}</p>
-                        <p>Número de serie: {{ relacion.numero_serie }}</p>
-                        <p>Modelo: {{ relacion.modelo }}</p>
+                        <p>Nombre: {{ producto.nombre | escape }}</p>
+                        <p>IMEI: {{ relacion.imei | escape }}</p>
+                        <p>Número de serie: {{ relacion.numero_serie | escape }}</p>
+                        <p>Modelo: {{ relacion.modelo | escape }}</p>
                       </div>
                     </li>
-                    <p class="estadoGarantias">{{ relacion.garantia }}</p>
+                    <p class="estadoGarantias">{{ relacion.garantia |escape }}</p>
                     {% endfor %}
               </div>
               {% endfor %}
