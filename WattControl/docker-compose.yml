@@ -9,11 +9,14 @@ services:
     volumes:
       - .:/app
     expose:
-      - "8000"  # Cambiado de ports a expose para que solo sea accesible internamente
+      - "8000"  # Solo accesible internamente
     depends_on:
       - db
     environment:
       - DJANGO_SETTINGS_MODULE=WattControl.settings
+    networks:
+      - internal_network
+      - external_network  # Accesible desde NGINX
 
   db:
     image: mysql:8.0
@@ -23,9 +26,11 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
-      - "3309:3306"
+      - "3309:3306"  # Solo para pruebas locales, elimina en producción
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - internal_network  # Solo accesible internamente
 
   nginx:
     image: nginx:latest
@@ -39,6 +44,14 @@ services:
       - ./certs:/etc/ssl/private:ro
     depends_on:
       - web
+    networks:
+      - external_network  # Accesible externamente
 
 volumes:
   db_data:
+
+networks:
+  internal_network:
+    driver: bridge
+  external_network:
+    driver: bridge
