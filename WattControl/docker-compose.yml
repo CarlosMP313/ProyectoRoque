@@ -22,6 +22,7 @@ services:
     cap_add:
       - NET_BIND_SERVICE
 
+
   db:
     image: mysql:8.0
     container_name: wattcontrol_db
@@ -35,6 +36,7 @@ services:
       - db_data:/var/lib/mysql
     networks:
       - internal_network  # Solo accesible internamente
+
 
   nginx:
     image: nginx:latest
@@ -50,6 +52,7 @@ services:
       - web
     networks:
       - external_network  # Accesible externamente
+
 
   backup:
     image: mysql:8.0
@@ -82,6 +85,7 @@ services:
       - db
     networks:
       - internal_network
+
 
 volumes:
   db_data:
