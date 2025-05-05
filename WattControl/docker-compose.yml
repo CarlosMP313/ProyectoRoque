@@ -35,11 +35,13 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
-      - "3309:3306"  # Solo para pruebas locales, elimina en producción
+      - "3309:3306"
     volumes:
       - db_data:/var/lib/mysql
+      - ./mysql:/docker-entrypoint-initdb.d
     networks:
-      - internal_network  # Solo accesible internamente
+      - internal_network
+
 
 
   nginx:
