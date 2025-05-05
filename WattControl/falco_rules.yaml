@@ -1,0 +1,13 @@
+- rule: Acceso a archivos sensibles
+  desc: Detecta accesos de lectura a archivos críticos como /etc/shadow o /etc/passwd
+  condition: evt.type=open and evt.is_open_read=true and fd.name in (/etc/shadow, /etc/passwd)
+  output: "ALERTA: Acceso a archivo sensible (user=%user.name file=%fd.name command=%proc.cmdline)"
+  priority: ERROR
+  tags: [acceso, lectura, archivo_sensible]
+
+- rule: Suspicious Shell Execution
+  desc: Detecta ejecución de shells dentro de contenedores
+  condition: evt.type=execve and proc.name in (bash, sh, zsh)
+  output: "Ejecución sospechosa de shell: %proc.name por %user.name (cmd=%proc.cmdline)"
+  priority: WARNING
+  tags: [process, security]

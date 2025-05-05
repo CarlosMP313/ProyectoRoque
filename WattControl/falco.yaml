@@ -1,0 +1,4 @@
+json_output: true
+json_output_format: "all"
+program_output: true
+program_output_program: "curl -d @- http://falcosidekick:2801/"

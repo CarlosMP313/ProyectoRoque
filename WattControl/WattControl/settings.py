@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'axes',
     
 ]
 
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'axes.middleware.AxesMiddleware',
 ]
 
 ROOT_URLCONF = 'WattControl.urls'
@@ -111,7 +113,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesStandaloneBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -146,3 +151,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'carlospruebas010120@gmail.com'
 EMAIL_HOST_PASSWORD = 'vtiksvaziulqdplu'
 EMAIL_USE_TLS = True  # O False si no se utiliza TLS
+
+
+AXES_FAILURE_LIMIT = 5
+AXES_COOLOFF_TIME = 1  # en horas
