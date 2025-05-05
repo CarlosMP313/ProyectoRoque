@@ -14,6 +14,10 @@ services:
       - db
     environment:
       - DJANGO_SETTINGS_MODULE=WattControl.settings
+    logging:
+      driver: loki
+      options:
+        loki-url: "http://loki:3100/loki/api/v1/push"
     networks:
       - internal_network
       - external_network  # Accesible desde NGINX
@@ -36,7 +40,10 @@ services:
       - db_data:/var/lib/mysql
     networks:
       - internal_network  # Solo accesible internamente
-
+    logging:
+      driver: loki
+      options:
+        loki-url: "http://loki:3100/loki/api/v1/push"
 
   nginx:
     image: nginx:latest
@@ -52,7 +59,10 @@ services:
       - web
     networks:
       - external_network  # Accesible externamente
-
+    logging:
+      driver: loki
+      options:
+        loki-url: "http://loki:3100/loki/api/v1/push"
 
   backup:
     image: mysql:8.0
@@ -68,7 +78,10 @@ services:
       - db
     networks:
       - internal_network
-
+    logging:
+      driver: loki
+      options:
+        loki-url: "http://loki:3100/loki/api/v1/push"
 
   volume_backup:
     image: alpine:latest
@@ -85,7 +98,42 @@ services:
       - db
     networks:
       - internal_network
+    logging:
+      driver: loki
+      options:
+        loki-url: "http://loki:3100/loki/api/v1/push"
 
+  loki:
+    image: grafana/loki:latest
+    container_name: loki
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - internal_network
+
+  promtail:
+    image: grafana/promtail:latest
+    container_name: promtail
+    volumes:
+      - ./promtail-config.yaml:/etc/promtail/config.yaml
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: -config.file=/etc/promtail/config.yaml
+    depends_on:
+      - loki
+    networks:
+      - internal_network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - loki
+    networks:
+      - internal_network
   falco:
     image: falcosecurity/falco:latest
     privileged: true
