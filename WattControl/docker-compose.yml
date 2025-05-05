@@ -47,6 +47,38 @@ services:
     networks:
       - external_network  # Accesible externamente
 
+  backup:
+    image: mysql:8.0
+    container_name: wattcontrol_backup
+    command: >
+      sh -c "while true; do
+      mysqldump -h db -u root -p${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE} > /backups/db_backup_$(date +\%F_%T).sql;
+      sleep 86400;
+      done"
+    volumes:
+      - ./backups:/backups  # Carpeta local para almacenar los backups
+    depends_on:
+      - db
+    networks:
+      - internal_network
+
+
+  volume_backup:
+    image: alpine:latest
+    container_name: wattcontrol_volume_backup
+    command: >
+      sh -c "while true; do
+      tar -czvf /backups/db_data_backup_$(date +\%F_%T).tar.gz /data;
+      sleep 86400;
+      done"
+    volumes:
+      - db_data:/data  # Monta el volumen de la base de datos
+      - ./backups:/backups  # Carpeta local para almacenar los backups
+    depends_on:
+      - db
+    networks:
+      - internal_network
+
 volumes:
   db_data:
 
