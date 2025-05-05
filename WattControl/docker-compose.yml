@@ -59,6 +59,22 @@ services:
     networks:
       - external_network  # Accesible externamente
 
+  modsecurity:
+    image: owasp/modsecurity-crs:3.3-nginx
+    container_name: wattcontrol_modsecurity
+    ports:
+      - "8443:443"  # HTTPS para ModSecurity
+      - "8080:80"   # HTTP para ModSecurity
+    volumes:
+      - ./modsecurity.conf:/etc/modsecurity.d/modsecurity.conf:ro  # Archivo de configuración de ModSecurity
+      - ./nginx-modsecurity.conf:/etc/nginx/nginx.conf.template:ro  # Monta como plantilla
+    command: >
+      sh -c "cp /etc/nginx/nginx.conf.template /etc/nginx/nginx.conf && nginx -g 'daemon off;'"
+    depends_on:
+      - nginx
+    networks:
+      - external_network
+
 
   backup:
     image: mysql:8.0
@@ -145,7 +161,7 @@ services:
       - /var/run/docker.sock:/host/var/run/docker.sock
       - /dev:/host/dev
       - /proc:/host/proc:ro
-      - /boot:/host/boot:ro
+      # - /boot:/host/boot:ro
       - /lib/modules:/host/lib/modules:ro
       - ./falco_rules.yaml:/etc/falco/falco_rules.local.yaml
     command: falco -c /etc/falco/falco.yaml -r /etc/falco/falco_rules.local.yaml
