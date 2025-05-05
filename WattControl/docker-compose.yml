@@ -5,7 +5,7 @@ services:
     build: .
     container_name: wattcontrol_web
     command: >
-     sh -c "/wait-for-it.sh wattcontrol_db:3306 -- python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+      sh -c "/wait-for-it.sh wattcontrol_db:3306 -t 30 -- python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     expose:
