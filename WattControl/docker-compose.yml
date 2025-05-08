@@ -5,16 +5,27 @@ services:
     build: .
     container_name: wattcontrol_web
     command: >
-     sh -c "/wait-for-it.sh wattcontrol_db:3306 -- python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
-
+      sh -c "/wait-for-it.sh wattcontrol_db:3306 -t 30 -- python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"  # Solo accesible internamente
     depends_on:
       - db
     environment:
       - DJANGO_SETTINGS_MODULE=WattControl.settings
+    logging:
+      driver: loki
+      options:
+        loki-url: "http://loki:3100/loki/api/v1/push"
+    networks:
+      - internal_network
+      - external_network  # Accesible desde NGINX
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+
 
   db:
     image: mysql:8.0
@@ -27,9 +38,149 @@ services:
       - "3309:3306"
     volumes:
       - db_data:/var/lib/mysql
+      - ./mysql:/docker-entrypoint-initdb.d
+    networks:
+      - internal_network
+
+
+
+  nginx:
+    image: nginx:latest
+    container_name: wattcontrol_nginx
+    ports:
+      - "443:443"  # HTTPS
+      - "80:80"    # HTTP (opcional, redirige a HTTPS)
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs:/etc/ssl/certs:ro  # Certificados SSL
+      - ./certs:/etc/ssl/private:ro
+    depends_on:
+      - web
+    networks:
+      - external_network  # Accesible externamente
+
+  modsecurity:
+    image: owasp/modsecurity-crs:3.3-nginx
+    container_name: wattcontrol_modsecurity
+    ports:
+      - "8443:443"  # HTTPS para ModSecurity
+      - "8080:80"   # HTTP para ModSecurity
+    volumes:
+      - ./modsecurity.conf:/etc/modsecurity.d/modsecurity.conf:ro  # Archivo de configuración de ModSecurity
+      - ./nginx-modsecurity.conf:/etc/nginx/nginx.conf.template:ro  # Monta como plantilla
+    command: >
+      sh -c "cp /etc/nginx/nginx.conf.template /etc/nginx/nginx.conf && nginx -g 'daemon off;'"
+    depends_on:
+      - nginx
+    networks:
+      - external_network
+
+
+  backup:
+    image: mysql:8.0
+    container_name: wattcontrol_backup
+    command: >
+      sh -c "while true; do
+      mysqldump -h db -u root -p${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE} > /backups/db_backup_$(date +\%F_%T).sql;
+      sleep 86400;
+      done"
+    volumes:
+      - ./backups:/backups  # Carpeta local para almacenar los backups
+    depends_on:
+      - db
+    networks:
+      - internal_network
+
+
+  volume_backup:
+    image: alpine:latest
+    container_name: wattcontrol_volume_backup
+    command: >
+      sh -c "while true; do
+      tar -czvf /backups/db_data_backup_$(date +\%F_%T).tar.gz /data;
+      sleep 86400;
+      done"
+    volumes:
+      - db_data:/data  # Monta el volumen de la base de datos
+      - ./backups:/backups  # Carpeta local para almacenar los backups
+    depends_on:
+      - db
+    networks:
+      - internal_network
+
+
+  loki:
+    image: grafana/loki:2.8.0
+    container_name: wattcontrol_loki
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - loki_data:/loki
+    restart: unless-stopped
+    networks:
+      - internal_network
+
+  promtail:
+    image: grafana/promtail:2.8.0
+    container_name: wattcontrol_promtail
+    volumes:
+      - ./promtail-config.yaml:/etc/promtail/config.yaml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    command: -config.file=/etc/promtail/config.yaml
+    depends_on:
+      - loki
+    restart: unless-stopped
+    networks:
+      - internal_network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: wattcontrol_grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./datasources:/etc/grafana/provisioning/datasources:ro
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-admin}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    depends_on:
+      - loki
+    restart: unless-stopped
+    networks:
+      - internal_network
+
+
+  falco:
+    image: falcosecurity/falco:latest
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - /dev:/host/dev
+      - /proc:/host/proc:ro
+      # - /boot:/host/boot:ro
+      - /lib/modules:/host/lib/modules:ro
+      - ./falco_rules.yaml:/etc/falco/falco_rules.local.yaml
+    command: falco -c /etc/falco/falco.yaml -r /etc/falco/falco_rules.local.yaml
+  
+  falcosidekick:
+    image: falcosecurity/falcosidekick
+    environment:
+      - FALCOSIDEKICK_SLACK_WEBHOOKURL=https://hooks.slack.com/services/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
+    ports:
+      - "2801:2801"
+
 
 volumes:
   db_data:
+  loki_data:
+  grafana_data:
 
-
-  
+networks:
+  internal_network:
+    driver: bridge
+  external_network:
+    driver: bridge

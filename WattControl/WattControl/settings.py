@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'axes',
     
 ]
 
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'axes.middleware.AxesMiddleware',
 ]
 
 ROOT_URLCONF = 'WattControl.urls'
@@ -73,6 +75,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'WattControl.wsgi.application'
 
+# filepath: /home/david/Documents/8vo/Seguridad-en-la-nube/Proyecto-docker/ProyBueno/ProyectoRoque/WattControl/WattControl/settings.py
+INSTALLED_APPS += [
+    'corsheaders',
+]
+
+MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
+
+# Configuración de CORS
+CORS_ALLOWED_ORIGINS = [
+    "https://tudominio.com",
+    "https://otrodominio.com",
+]
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://localhost',
+    'https://127.0.0.1',
+]
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -107,7 +127,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesStandaloneBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -142,3 +165,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'carlospruebas010120@gmail.com'
 EMAIL_HOST_PASSWORD = 'vtiksvaziulqdplu'
 EMAIL_USE_TLS = True  # O False si no se utiliza TLS
+
+
+AXES_FAILURE_LIMIT = 5
+AXES_COOLOFF_TIME = 1  # en horas

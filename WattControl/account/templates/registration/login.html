@@ -12,11 +12,11 @@
       {% csrf_token %}
       <div class="form-group">
         <label for="username" class="form-label">Ingresa tu Usuario</label>
-        {{ form.username }}
+        {{ form.username | escape}}
 
       <div class="form-group">
         <label for="password" class="form-label">Contraseña</label>
-        {{ form.password }}
+        {{ form.password | escape }}
         <div class="password-toggleLogon" onclick="togglePasswordVisibilityInicio()">
           <!-- <img src="{% static 'imgs/eye-off.png' %}" alt="Toggle Password Visibility"> -->
         </div>

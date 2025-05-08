@@ -1,0 +1,13 @@
+
+mysql -u root -p 
+
+
+USE wattcontrol;
+
+
+INSERT INTO account_productos (nombre, nomImagen) VALUES
+('Box', 'box.png'),
+('Max', 'max.png'),
+('One', 'one.png'),
+('Plug', 'plug.png'),
+('Push', 'push.png');

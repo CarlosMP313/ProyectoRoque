@@ -1,0 +1,46 @@
+{
+    "defaultAction": "SCMP_ACT_ERRNO",
+    "archMap": [
+      {
+        "architecture": "SCMP_ARCH_X86_64",
+        "subArchitectures": ["SCMP_ARCH_X86", "SCMP_ARCH_X32"]
+      },
+      {
+        "architecture": "SCMP_ARCH_AARCH64",
+        "subArchitectures": ["SCMP_ARCH_ARM"]
+      }
+    ],
+    "syscalls": [
+      {
+        "names": [
+          "chmod", "fchmod", "fchmodat",
+          "mount", "umount2",
+          "ptrace",
+          "clone", "fork", "vfork",
+          "delete_module",
+          "reboot",
+          "kexec_load", "init_module"
+        ],
+        "action": "SCMP_ACT_KILL",
+        "args": [],
+        "comment": "Bloquear llamadas peligrosas que pueden comprometer el host"
+      },
+      {
+        "names": [
+          "read", "write", "open", "close", "stat", "fstat", "lstat",
+          "poll", "lseek", "mmap", "mprotect", "munmap", "brk",
+          "rt_sigaction", "rt_sigprocmask", "ioctl", "pread64",
+          "pwrite64", "readv", "writev", "access", "pipe", "select",
+          "sched_yield", "mremap", "msync", "mincore", "madvise",
+          "shmget", "shmat", "shmctl", "dup", "dup2", "pause", "nanosleep",
+          "getpid", "sendfile", "socket", "connect", "accept", "sendto",
+          "recvfrom", "sendmsg", "recvmsg", "shutdown", "bind", "listen",
+          "getsockname", "getpeername", "socketpair", "setsockopt",
+          "getsockopt", "clone3", "execve", "wait4", "prctl"
+        ],
+        "action": "SCMP_ACT_ALLOW",
+        "args": [],
+        "comment": "Permitir llamadas básicas necesarias para funcionamiento"
+      }
+    ]
+  }

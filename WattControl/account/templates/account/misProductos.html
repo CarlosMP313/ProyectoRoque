@@ -29,19 +29,19 @@
               alt="{{ producto.nombre }}"
             />
             {% for relacion in producto.relacionup_set.all %}
-            <h2>{{ producto.nombre }}</h2>
+            <h2>{{ producto.nombre  | escape }}</h2>
             <img
               class="estadoImagen"
               src="{% if relacion.estado == 'Activo' %}{% static 'imgs/truecircle.png' %}{% else %}{% static 'imgs/flasecircle.png' %}{% endif %}"
               alt="Estado"/>
             <div class="detallesProducto">
-              <p>Nombre: {{ producto.nombre }}</p>
-              <p>IMEI: {{ relacion.imei }}</p>
-              <p>Número de serie: {{ relacion.numero_serie }}</p>
-              <p>Modelo: {{ relacion.modelo }}</p>
+              <p>Nombre: {{ producto.nombre | escape }}</p>
+              <p>IMEI: {{ relacion.imei | escape }}</p>
+              <p>Número de serie: {{ relacion.numero_serie | escape }}</p>
+              <p>Modelo: {{ relacion.modelo | escape }}</p>
             </div>
           </li>
-          <p class="estadoProducto">{{ relacion.estado }}</p>
+          <p class="estadoProducto">{{ relacion.estado | escape }}</p>
           {% endfor %}
         </div>
         {% endfor %}
@@ -84,7 +84,7 @@
                   src="{% static 'imgs/' %}{{ producto.nomImagen }}"
                   alt="{{ producto.nombre }}"
                 />
-                <h2>{{ producto.nombre }}</h2>
+                <h2>{{ producto.nombre | escape }}</h2>
               </li>
               {% endfor %}
             </ul>
